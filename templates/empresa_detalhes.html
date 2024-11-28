@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ empresa.nome }} - CoffeVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/empresa_detalhes.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header da Empresa -->
+        <div class="text-center mt-4">
+            <h1>{{ empresa.nome }}</h1>
+            <p class="lead">{{ empresa.descricao }}</p>
+            <p><strong>Endereço:</strong> {{ empresa.endereco }}</p>
+        </div>
+
+        <h2>Produtos</h2>
+        <div class="row">
+            {% for produto in produtos %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="{{ produto.imagem or 'default_product_image.jpg' }}" class="card-img-top" alt="{{ produto.nome }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ produto.nome }}</h5>
+                            <p class="card-text">{{ produto.descricao }}</p>
+                            <p class="card-text"><strong>Preço:</strong> R$ {{ produto.preco }}</p>
+                            <!-- Link para a página de compra -->
+                            <a href="{{ url_for('compra', produto_id=produto.id) }}" class="btn btn-primary">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

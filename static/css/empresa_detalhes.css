@@ -1,0 +1,42 @@
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #6c757d;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.product-container {
+  margin-top: 30px;
+}
