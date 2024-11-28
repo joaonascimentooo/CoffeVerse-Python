@@ -14,7 +14,7 @@
             <h1 class="mt-4">Rua Manoel Beckman, 154</h1>
         </div>
 
-        <!-- Seção Cafés -->
+        <!--  Cafés -->
         <div class="cafe-section mt-4">
             <h2>Cafés</h2>
             <div class="row">
@@ -30,19 +30,19 @@
             </div>
         </div>
 
-        <!-- Seção Lojas -->
+        <!--Lojas -->
         <div class="lojas-section mt-5">
             <h2>Lojas</h2>
             <div class="list-group">
                 {% for empresa in empresas %}
-                <div class="list-group-item loja-card d-flex align-items-center">
+                <a href="{{ url_for('empresa_detalhes', empresa_id=empresa.id) }}" class="list-group-item loja-card d-flex align-items-center">
                     <img src="default_logo.jpg" alt="Logo da Loja">
                     <div class="loja-info">
                         <h5>{{ empresa.nome }}</h5>
                         <p>Cafeteria • {{ empresa.endereco }}</p>
                         <p class="mb-0">⭐ {{ empresa.avaliacao | default(0) }} • {{ empresa.distancia | default('0 Km') }}</p>
                     </div>
-                </div>
+                </a>
                 {% endfor %}
             </div>
         </div>
