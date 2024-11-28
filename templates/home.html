@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Coffee Verse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <header class="text-center py-5 bg-light">
+        <h1>Bem-vindo ao Coffee Verse</h1>
+        <p class="lead">Seu café, do seu jeito, a qualquer hora!</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">Peça Agora</a>
+    </header>
+    <main class="container my-5">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <h3>Qualidade</h3>
+                <p>Cafés de alta qualidade selecionados especialmente para você.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Rapidez</h3>
+                <p>Seu pedido entregue rapidamente onde você estiver.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Variedade</h3>
+                <p>Explore nosso menu com uma ampla gama de opções.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Coffee Verse. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

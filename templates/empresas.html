@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeVerse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="empresas.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="mt-4">Rua Manoel Beckman, 154</h1>
+        </div>
+
+        <!-- Seção Cafés -->
+        <div class="cafe-section mt-4">
+            <h2>Cafés</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="cafe1.jpg" alt="Café 1">
+                </div>
+                <div class="col-md-4">
+                    <img src="cafe2.jpg" alt="Café 2">
+                </div>
+                <div class="col-md-4">
+                    <img src="cafe3.jpg" alt="Café 3">
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção Lojas -->
+        <div class="lojas-section mt-5">
+            <h2>Lojas</h2>
+            <div class="list-group">
+                {% for empresa in empresas %}
+                <div class="list-group-item loja-card d-flex align-items-center">
+                    <img src="default_logo.jpg" alt="Logo da Loja">
+                    <div class="loja-info">
+                        <h5>{{ empresa.nome }}</h5>
+                        <p>Cafeteria • {{ empresa.endereco }}</p>
+                        <p class="mb-0">⭐ {{ empresa.avaliacao | default(0) }} • {{ empresa.distancia | default('0 Km') }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

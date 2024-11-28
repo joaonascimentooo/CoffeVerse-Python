@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, sans-serif;
+}
+header {
+  background-image: url("../images/coffee-bg.jpg");
+  background-size: cover;
+  color: #fff;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

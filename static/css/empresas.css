@@ -1,0 +1,57 @@
+/* Configurações gerais */
+body {
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Seção de cafés */
+.cafe-section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Seção de lojas */
+.lojas-section {
+  margin-top: 30px;
+}
+
+.loja-card {
+  background-color: #444;
+  border: none;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.loja-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.loja-info {
+  margin-left: 15px;
+}
+
+.loja-info h5 {
+  margin-bottom: 5px;
+}
+
+/* Ajuste de links ou botões (se necessário no futuro) */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ddd;
+  text-decoration: underline;
+}
