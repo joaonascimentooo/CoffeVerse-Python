@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %} Drawer com Design {% endblock %}</title>
+  <title>{% block title %} CoffeVerse {% endblock %}</title>
   <link rel="stylesheet" href="{{url_for('static', filename='css/drawer.css')}}">
 </head>
 
@@ -11,7 +11,7 @@
   <!-- Menu Superior -->
   <header class="top-menu">
     <div class="logo">
-      <img src="{{url_for('static', filename='images/5.png')}}" alt="Logo">
+      <img src="{{url_for('static', filename='img/logo.png')}}" alt="Logo">
     </div>
     <button id="open-drawer" class="drawer-button">☰</button>
   </header>
@@ -23,7 +23,7 @@
   <!-- Drawer -->
   <div id="drawer" class="drawer">
     <div class="profile-header">
-      <img src="user-avatar.png" alt="Avatar do Usuário" class="avatar">
+      <img src="static/img/user.png" alt="Avatar do Usuário" class="avatar">
       <h2 class="username">João Vitor</h2>
     </div>
     <div class="menu-options">
