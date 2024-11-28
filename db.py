@@ -5,7 +5,7 @@ def get_db_connection():
         'host': 'localhost',
         'user': 'root',
         'password': 'root',  # Altere conforme necessário
-        'database': 'CoffeVerse'
+        'database': 'coffeverse'
     }
     connection = mysql.connector.connect(**db_config)
     return connection
