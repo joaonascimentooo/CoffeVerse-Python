@@ -17,10 +17,6 @@ O projeto visa criar uma solução intuitiva e simples para usuários que deseja
 
 - **Cadastro de Cafés e Padarias:** Cafés e padarias podem se registrar, gerenciar seu cardápio e definir preços.
 - **Exploração de Itens:** Usuários podem visualizar o cardápio, filtrar por tipo de item (café, pães, doces, etc.).
-- **Carrinho de Compras:** Adicione itens ao carrinho e edite a quantidade antes de finalizar a compra.
-- **Sistema de Pagamento:** Realize pagamentos seguros via Stripe.
-- **Rastreamento de Pedidos:** Usuários podem acompanhar o status de seus pedidos em tempo real.
-
 ## 💡 Como Executar o Projeto
 
 1. Clone o repositório:
