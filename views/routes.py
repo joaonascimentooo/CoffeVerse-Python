@@ -23,7 +23,28 @@ def register_routes(app):
     
     @app.route('/login', methods=['GET', 'POST'])
     def login():
-        if request.method == 'POST':
+        if 'cadastrar' in request.form:
+            nome = request.form['nome-cad']
+            email = request.form['email-cad']
+            senha = request.form['senha-cad']
+
+            connection = get_db_connection()
+            cursor = connection.cursor(dictionary=True)
+            
+            cursor.execute("INSERT INTO tb_cliente (nome, email, senha) VALUES (%s, %s, %s)", 
+                        (nome, email, senha))
+            
+            connection.commit()
+            cliente_id = cursor.lastrowid
+            connection.close()
+
+            novo_cliente = Cliente(cliente_id, nome, email, senha)
+            login_user(novo_cliente)
+
+            return redirect('/empresas')
+
+            
+        elif 'login' in request.method == 'POST':
             email = request.form['email']
             senha = request.form['senha']
             cliente = Cliente.authenticate(email, senha)
