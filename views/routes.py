@@ -1,4 +1,6 @@
-from flask import render_template, request
+from flask import render_template, request, flash, redirect
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from models.cliente import Cliente
 from db import get_db_connection  
 #Empresas
 def register_routes(app):
@@ -17,6 +19,22 @@ def register_routes(app):
     def home():
         return render_template('home.html')
     
+    @app.route('/login', methods=['GET', 'POST'])
+    def login():
+        if request.method == 'POST':
+            email = request.form['email']
+            senha = request.form['senha']
+            cliente = Cliente.authenticate(email, senha)
+
+            if cliente:
+                login_user(cliente)
+                flash('Login realizado com sucesso!', 'success')
+                return redirect('/empresas')
+            else:
+                flash('Credenciais inválidas!', 'danger')
+
+        return render_template('login.html')
+
     @app.route('/empresa/<int:empresa_id>')
     def empresa_detalhes(empresa_id):
         connection = get_db_connection()
