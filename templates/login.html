@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register.css') }}">
     <title>Login e Cadastro</title>
 </head>
+
 <body>
 
     <div class="container" id="container">
         <div class="form-container cadastrar">
             <form method="POST">
-                
+
                 <h1>Crie sua conta</h1>
                 <div class="social-icons">
                     <a href="#" class="icon">
@@ -21,7 +23,7 @@
                 </div>
                 <span>Ou use seu email para cadastro</span>
                 <input type="text" name="nome-cad" placeholder="Nome">
-                <input type="email"  name="email-cad" placeholder="Email">
+                <input type="email" name="email-cad" placeholder="Email">
                 <input type="password" name="senha-cad" placeholder="Password">
                 <button type="submit" name="cadastrar">Cadastrar</button>
             </form>
@@ -41,30 +43,31 @@
                 <button type="submit" name="login">Entrar</button>
             </form>
         </div>
-    
+
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Olá.</h1>
                     <h2> Bem vindo de volta!</h2>
-                    <img class="xica" src="/fotas/5.png" alt="">
+                    <img class="xica" src="{{url_for('static', filename='img/minilogo.png')}}" alt="">
                     <p class="jajava">Jájava tomou seu café hoje? Não? ta esperando o que? Aproveita logo.</p>
                     <button class="hidden" id="Entrar">Entrar</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1> Seja bem-vindo à </h1>
-                    <img src="/fotas/3.png" alt="" class="logofota">
+                    <img src="{{url_for('static', filename='img/3removebg.png')}}" alt="" class="logofota">
                     <p>Crie sua conta para salvar seu progresso e facilitar futuras compras!</p>
                     <button class="hidden" id="Cadastrar">Cadastrar</button>
                 </div>
             </div>
         </div>
     </div>
-    
-    
+
+
 
 
     <script src="{{ url_for('static', filename='js/login_register.js') }}"></script>
 
 </body>
+
 </html>
