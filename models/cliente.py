@@ -3,7 +3,7 @@ import db
 
 
 class Cliente(UserMixin):
-    def __init__(self, id, nome, email, senha, telefone=None, endereco=None,):
+    def __init__(self, id, nome, email, telefone, endereco, senha):
         self.id = id
         self.nome = nome
         self.email = email
