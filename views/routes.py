@@ -44,7 +44,7 @@ def register_routes(app):
             return redirect('/empresas')
 
             
-        elif 'login' in request.method == 'POST':
+        elif request.method == 'POST':
             email = request.form['email']
             senha = request.form['senha']
             cliente = Cliente.authenticate(email, senha)
