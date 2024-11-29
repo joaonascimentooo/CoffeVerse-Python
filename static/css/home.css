@@ -1,11 +1,46 @@
 body {
   font-family: Arial, sans-serif;
+  color: #743f38;
+  background: linear-gradient(to right, #e2e2e2,
+      #c9d6ff);
 }
-header {
-  background-image: url("../images/coffee-bg.jpg");
-  background-size: cover;
-  color: #fff;
+
+img.card-img-top {
+  height: 200px;
+  width: 200px;
 }
+
+img.logo {
+  height: 300px;
+  width: 300px;
+
+}
+
+h1 {
+  position: absolute;
+  margin-top: px;
+  margin-left: 820px;
+  color: #58231c;
+}
+
+
+p.lead {
+  position: absolute;
+  margin-top: -65px;
+  margin-left: 700px;
+  color: #58231c;
+  font-size: 30;
+}
+
+.card-img-container {
+  display: flex;
+  justify-content: center;
+  /* Alinha horizontalmente */
+  align-items: center;
+  /* Alinha verticalmente */
+
+}
+
 footer {
   position: relative;
   bottom: 0;

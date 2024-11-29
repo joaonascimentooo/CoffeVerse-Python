@@ -3,6 +3,7 @@
 {% block content %}
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +11,53 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="empresas.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
+
         <div class="header">
-            <h1 class="mt-4">Rua Manoel Beckman, 154</h1>
+            </br>
+            <div class="card mb-4">
+                <p>Endereço:</p>
+                <h1 class="mt-4">Rua Manoel Beckman, 154</h1>
+            </div>
         </div>
 
         <!--  Cafés -->
-        <div class="cafe-section mt-4">
-            <h2>Cafés</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="" alt="Café 1">
+
+        <div class="cafe-section mt-4 text-center">
+            <h2 class="mb-4">Cafés Mais Vendidos</h2>
+            <div class="row justify-content-center">
+                <div class="card me-3 mb-3" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='img/mocha.jpg')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Mocha</h5>
+                        <p class="card-text">É uma deliciosa bebida à base de café que combina expresso, leite
+                            vaporizado e chocolate, podendo ser em pó, calda ou até pedaços derretidos</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img src="cafe2.jpg" alt="Café 2">
+
+                <div class="card me-3 mb-3" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='img/coffe2.jpg')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Expresso</h5>
+                        <p class="card-text">Intenso e marcante, o expresso é pura essência do café, servido em uma dose
+                            perfeita para os amantes de sabores fortes.</p>
+
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img src="cafe3.jpg" alt="Café 3">
+
+                <div class="card me-3 mb-3" style="width: 18rem;">
+                    <img src="{{url_for('static', filename='img/coffe3.jpg')}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Cafe Latte</h5>
+                        <p class="card-text">Uma combinação irresistível de café, leite cremoso e espuma aveludada, com
+                            um toque de cacau para finalizar.</p>
+
+                    </div>
                 </div>
+                <!-- Outros cards -->
             </div>
         </div>
 
@@ -38,12 +66,16 @@
             <h2>Lojas</h2>
             <div class="list-group">
                 {% for empresa in empresas %}
-                <a href="{{ url_for('empresa_detalhes', empresa_id=empresa.id) }}" class="list-group-item loja-card d-flex align-items-center">
-                    <img src="default_logo.jpg" alt="Logo da Loja">
+                <a href="{{ url_for('empresa_detalhes', empresa_id=empresa.id) }}"
+                    class="list-group-item loja-card d-flex align-items-center">
+                    <img src="{{url_for('static', filename='img/user.png')}}" class="logoloja" alt="Logo da Loja"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+
                     <div class="loja-info">
                         <h5>{{ empresa.nome }}</h5>
                         <p>Cafeteria • {{ empresa.endereco }}</p>
-                        <p class="mb-0">⭐ {{ empresa.avaliacao | default(0) }} • {{ empresa.distancia | default('0 Km') }}</p>
+                        <p class="mb-0">⭐ {{ empresa.avaliacao | default(0) }} • {{ empresa.distancia | default('0 Km')
+                            }}</p>
                     </div>
                 </a>
                 {% endfor %}
@@ -53,5 +85,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
 {% endblock %}

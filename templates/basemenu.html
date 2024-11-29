@@ -10,9 +10,15 @@
 <body>
   <!-- Menu Superior -->
   <header class="top-menu">
-    <div class="logo">
-      <img src="{{url_for('static', filename='img/logo.png')}}" alt="Logo">
+
+    <div class="logohome">
+      <a href="/"><img src="{{url_for('static', filename='img/casa.png')}}" alt="Logo"></a>
     </div>
+
+    <div class="logo">
+      <a href="/empresas"><img src="{{url_for('static', filename='img/3removebg.png')}}" alt="Logo"></a>
+    </div>
+
     <button id="open-drawer" class="drawer-button">☰</button>
   </header>
 
@@ -23,27 +29,27 @@
   <!-- Drawer -->
   <div id="drawer" class="drawer">
     <div class="profile-header">
-      <img src="static/img/user.png" alt="Avatar do Usuário" class="avatar">
+      <img src="{{url_for('static', filename='img/user.png')}}" alt="Avatar do Usuário" class="avatar">
       <h2 class="username">João Vitor</h2>
     </div>
     <div class="menu-options">
       <a href="#configurar" class="menu-item">
-        <img src="settings-icon.png" alt="Configurar">
+        <img src="{{url_for('static', filename='img/configuracao.png')}}" alt="Configurar">
         Configurar
         <span class="arrow">➤</span>
       </a>
       <a href="#seguranca" class="menu-item">
-        <img src="security-icon.png" alt="Segurança">
+        <img src="{{url_for('static', filename='img/seguranca.png')}}" alt="Segurança">
         Segurança
         <span class="arrow">➤</span>
       </a>
       <a href="#historico" class="menu-item">
-        <img src="history-icon.png" alt="Histórico de Compras">
+        <img src="{{url_for('static', filename='img/historico.png')}}" alt="Histórico de Compras">
         Histórico de Compras
         <span class="arrow">➤</span>
       </a>
       <a href="#pagamentos" class="menu-item">
-        <img src="payment-icon.png" alt="Pagamentos">
+        <img src="{{url_for('static', filename='img/pagamento.png')}}" alt="Pagamentos">
         Pagamentos
         <span class="arrow">➤</span>
       </a>
